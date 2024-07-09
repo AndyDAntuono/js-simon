@@ -27,6 +27,7 @@ function vanish() {
 const timer_insertNumbers = setTimeout(function () {
     insertNumbers()
     confrontArray()
+    score()
 }, 2000);
 
 //la funzione sottostante ha il compito di far apparire un prompt in cui l'utente deve iserire gli stessi numeri randomici apparsi precedentemente
@@ -54,8 +55,12 @@ function confrontArray() {
         }
         
     }
-    console.log(commonNumbers)
     return commonNumbers
+}
+
+function score() {
+    let correctNumber = confrontArray()
+    console.log(correctNumber)
 }
 
 
