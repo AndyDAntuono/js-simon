@@ -1,10 +1,19 @@
 /******SEZIONE ESERCIZIO*******/
 
-setTimeout (timer, 30000);
+//imposto un  genereratore di numeri randomici tramite un array vuoto
+let randomNunmbers = [];
+//specifico che la lughezza dell'array non deve essere più lunga di 5 valori
+while (randomNunmbers.length < 5) {
+    //imposto una variabile in cui num può essere un numero randomico che vada da 1 a 100
+    let num = Math.floor(Math.random() * 100 + 1);
+    //specifico che SE un numero randomico è diverso dal precedente numero randomico, allora lo si può includere nell'array 
+    if(!randomNunmbers.includes(num)){
+        randomNunmbers.push(num);
+    }
+}
+//faccio in modo che l'array composto da numeri randomici appaia sul div #random_numbers
+document.getElementById("random_numbers").innerHTML = randomNunmbers.join(' ');
 
-let randomNunmbers = []
-
-function 
 /***********************SEZIONE TEST**************/
 // La sezione sottostante a che fare con dei test eseguguiti autonomamente per capire se riesco a replicare i live coding mostrati durante la lezione mattutina, ergo quello che è scritto qua sotto non è da considerarsi parte dell'esercizio.
 
