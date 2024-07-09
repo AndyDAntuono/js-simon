@@ -15,10 +15,19 @@ while (randomNunmbers.length < 5) {
 document.getElementById("random_numbers").innerHTML = randomNunmbers.join(' ');
 
 //imposto un timer di 30 secondi e lo associo ad una funzione che farà "scomparire" i numeri randomici apparsi sul file html
-const timer = setTimeout(vanish, 30000);
+const timer_vanish = setTimeout(vanish, 30000);
+
 
 function vanish() {
     document.getElementById("random_numbers").style.display = "none";
+}
+
+//imposto un altro timer che farà apparire un promt dopo 35 secondi
+const timer_insertNumbers = setTimeout(insertNumbers, 35000);
+
+//la funzione sottostante ha il compito di far apparire un prompt in cui l'utente deve iserire gli stessi numeri randomici apparsi precedentemente
+function insertNumbers() {
+    userNumber = window.parseInt(prompt("Inserisci i numeri apparsi poco fa"))
 }
 
 /***********************SEZIONE TEST**************/
