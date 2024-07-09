@@ -14,6 +14,13 @@ while (randomNunmbers.length < 5) {
 //faccio in modo che l'array composto da numeri randomici appaia sul div #random_numbers
 document.getElementById("random_numbers").innerHTML = randomNunmbers.join(' ');
 
+//imposto un timer di 30 secondi e lo associo ad una funzione che farà "scomparire" i numeri randomici apparsi sul file html
+const timer = setTimeout(vanish, 30000);
+
+function vanish() {
+    document.getElementById("random_numbers").style.display = "none";
+}
+
 /***********************SEZIONE TEST**************/
 // La sezione sottostante a che fare con dei test eseguguiti autonomamente per capire se riesco a replicare i live coding mostrati durante la lezione mattutina, ergo quello che è scritto qua sotto non è da considerarsi parte dell'esercizio.
 
