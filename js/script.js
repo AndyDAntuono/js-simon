@@ -9,13 +9,14 @@ while (randomNunmbers.length < 5) {
     //specifico che SE un numero randomico è diverso dal precedente numero randomico, allora lo si può includere nell'array 
     if(!randomNunmbers.includes(num)){
         randomNunmbers.push(num);
+        console.log(randomNunmbers)
     }
 }
 //faccio in modo che l'array composto da numeri randomici appaia sul div #random_numbers
 document.getElementById("random_numbers").innerHTML = randomNunmbers.join(' ');
 
 //imposto un timer di 30 secondi e lo associo ad una funzione che farà "scomparire" i numeri randomici apparsi sul file html
-const timer_vanish = setTimeout(vanish, 30000);
+const timer_vanish = setTimeout(vanish, 1000);
 
 
 function vanish() {
@@ -23,12 +24,40 @@ function vanish() {
 }
 
 //imposto un altro timer che farà apparire un promt dopo 35 secondi
-const timer_insertNumbers = setTimeout(insertNumbers, 35000);
+const timer_insertNumbers = setTimeout(function () {
+    insertNumbers()
+    confrontArray()
+}, 2000);
 
 //la funzione sottostante ha il compito di far apparire un prompt in cui l'utente deve iserire gli stessi numeri randomici apparsi precedentemente
+
+let userNumbers = [];
+
 function insertNumbers() {
-    userNumber = window.parseInt(prompt("Inserisci i numeri apparsi poco fa"))
+
+    for ( i = 0; i < 5; i++) {
+        let y = parseInt(prompt("Inserisci i numeri apparsi poco fa")); 
+        userNumbers.push(y);
+        console.log(userNumbers)
+    }
+    
 }
+
+
+function confrontArray() {
+    let commonNumbers = [];
+
+    for (i = 0; i < userNumbers.length; i++) {
+        let check = userNumbers[i]
+        if (randomNunmbers.includes(check)) {
+            commonNumbers.push(check)
+        }
+        
+    }
+    console.log(commonNumbers)
+    return commonNumbers
+}
+
 
 /***********************SEZIONE TEST**************/
 // La sezione sottostante a che fare con dei test eseguguiti autonomamente per capire se riesco a replicare i live coding mostrati durante la lezione mattutina, ergo quello che è scritto qua sotto non è da considerarsi parte dell'esercizio.
