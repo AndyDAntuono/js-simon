@@ -59,8 +59,7 @@ function confrontArray() {
 }
 
 function score() {
-    let correctNumber = confrontArray()
-    console.log(correctNumber)
+    console.log(confrontArray().length)
 }
 
 
