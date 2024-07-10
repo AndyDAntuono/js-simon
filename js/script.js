@@ -18,7 +18,6 @@ document.getElementById("random_numbers").innerHTML = randomNunmbers.join(' ');
 //imposto un timer di 30 secondi e lo associo ad una funzione che farà "scomparire" i numeri randomici apparsi sul file html
 const timer_vanish = setTimeout(vanish, 30000);
 
-
 function vanish() {
     document.getElementById("random_numbers").style.display = "none";
 }
@@ -31,7 +30,6 @@ const timer_insertNumbers = setTimeout(function () {
 }, 35000);
 
 //la funzione sottostante ha il compito di far apparire un prompt in cui l'utente deve iserire gli stessi numeri randomici apparsi precedentemente
-
 let userNumbers = [];
 
 function insertNumbers() {
@@ -44,7 +42,7 @@ function insertNumbers() {
     
 }
 
-
+// creo un altro array in cui vengono inseriti i valori provenienti dai due precedenti SE i valori sono uguali
 function confrontArray() {
     let commonNumbers = [];
 
@@ -58,6 +56,7 @@ function confrontArray() {
     return commonNumbers
 }
 
+//creo un altra funzione in do un punteggio in base ai valori azzeccati
 function score() {
     console.log(confrontArray().length)
 }
